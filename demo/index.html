@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue for beginer</title>
+    <style>
+        .card-product {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            margin-bottom: 20px;
+            align-items: center;
+            justify-content: center;
+            margin: 5px
+        }
+
+        .card.cart {
+            background: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="contact">
+        <div class="card-container card-product">
+            <div
+            class="card"
+            v-for="product in products"
+            :class="{cart: product.isCart}"
+            @dblclick="onToggleCart(product)">
+                <img v-bind:src="product.thumb" class="card-thumb" style="width: 200px;height:auto ">
+                <h3>{{product.name}}</h3>
+                <h3>{{product.price}}</h3>
+            </div>
+
+        </div>
+    </section>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
