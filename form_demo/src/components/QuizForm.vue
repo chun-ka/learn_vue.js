@@ -140,10 +140,10 @@ export default {
   data() {
     return {
       quiz: {
-        fullName: "Sky Albert",
+        fullName: "Quoc Trung",
         email: "",
         desc: "",
-        jobs: [],
+        jobs: [1],
       },
       error: {
         text: "",
