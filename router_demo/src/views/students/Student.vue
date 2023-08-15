@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="students.length">
     <h1>Danh sách học sinh</h1>
     <table class="table table-dark table-striped">
       <thead>
@@ -41,19 +41,24 @@
       </tbody>
     </table>
   </div>
+  <div v-else>
+    <h1>Loading Students ....</h1>
+  </div>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      students: [
-        { id: 1, name: "trung", age: 20 },
-        { id: 2, name: "kha", age: 22 },
-        { id: 3, name: "nam", age: 24 },
-      ],
+      students: [],
     };
   },
+  mounted() {
+    fetch('http://localhost:3000/students')
+    .then(res=>res.json())
+    .then(data=>this.students = data)
+    .catch(error=>console.log(error.message))
+  }
 };
 </script>
 

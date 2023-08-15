@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "thu 2",
+      "body": "la ngay dau tuan",
+      "tags": [
+        "xuân",
+        "hạ",
+        "thu"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "thu 3",
+      "body": "qua la met moi",
+      "tags": [
+        "bắc",
+        "trung",
+        "nam"
+      ]
+    }
+  ]
+}
